@@ -27,7 +27,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.BorderStroke
 import com.example.pr06_lazycomponents.model.Pokemon
-import com.example.pr06_lazycomponents.view.components.StatItem
 import com.example.pr06_lazycomponents.ui.theme.getTypeColor
 
 @Composable
@@ -149,6 +148,37 @@ fun PokemonDetailScreen(
             }
 
             Spacer(modifier = Modifier.height(32.dp))
+        }
+    }
+}
+
+@Composable
+private fun StatItem(
+    statName: String,
+    statValue: Int,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier,
+        shape = androidx.compose.foundation.shape.RoundedCornerShape(8.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = statName,
+                style = MaterialTheme.typography.bodyMedium
+            )
+
+            Text(
+                text = statValue.toString(),
+                style = MaterialTheme.typography.bodyLarge,
+                fontWeight = FontWeight.Bold
+            )
         }
     }
 }
