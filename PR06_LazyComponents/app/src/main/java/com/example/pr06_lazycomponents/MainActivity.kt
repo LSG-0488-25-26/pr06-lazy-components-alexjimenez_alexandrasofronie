@@ -63,3 +63,32 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+//Preview para PokemonListScreen
+@Preview(showBackground = true, name = "Pokemon List Screen")
+@Composable
+fun PokemonListScreenPreview() {
+    PR06_LazyComponentsTheme {
+        PokemonListScreen(
+            viewModel = viewModel(),
+            onPokemonClick = { }
+        )
+    }
+}
+
+//Preview para PokemonDetailScreen
+@Preview(showBackground = true, name = "Pokemon Detail Screen")
+@Composable
+fun PokemonDetailScreenPreview() {
+    PR06_LazyComponentsTheme {
+        PokemonDetailScreen(
+            pokemon = Pokemon(
+                name = "Pikachu",
+                type = "Electric",
+                image = R.drawable.pikachu,
+                stats = PokemonStats(35, 55, 40, 50, 50, 90)
+            ),
+            onBackClick = { }
+        )
+    }
+}
