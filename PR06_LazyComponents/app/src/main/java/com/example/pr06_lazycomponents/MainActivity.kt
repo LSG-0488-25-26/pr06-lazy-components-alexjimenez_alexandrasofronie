@@ -11,37 +11,31 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
 import com.example.pr06_lazycomponents.ui.theme.PR06_LazyComponentsTheme
+import com.example.pr06_lazycomponents.view.PokemonListScreen
+import com.example.pr06_lazycomponents.viewmodel.PokemonViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             PR06_LazyComponentsTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                PokemonApp()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun PokemonApp() {
+    val viewModel: PokemonViewModel = viewModel()
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PR06_LazyComponentsTheme {
-        Greeting("Android")
-    }
+    PokemonListScreen(
+        onPokemonClick = { pokemon ->
+            println("Clic en: ${pokemon.name}")
+        }
+    )
 }
