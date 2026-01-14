@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.Alignment
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pr06_lazycomponents.viewmodel.PokemonViewModel
 
@@ -29,18 +30,24 @@ fun PokemonListScreen(
                 .padding(16.dp)
         )
         if (pokemonList.isEmpty()) {
-            Text(
-                text = "Cargando Pokémon...",
-                modifier = Modifier.padding(16.dp)
-            )
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ){
+                Text(
+                    text = "Cargando Pokémon..."
+                )
+            }
         } else {
             LazyColumn(
                 modifier = Modifier.padding(horizontal = 8.dp)
             ) {
                 items(pokemonList) { pokemon ->
-                    Text(
-                        text = pokemon.name,
-                        modifier = Modifier.padding(8.dp)
+                    PokemonItem(
+                        pokemon = pokemon,
+                        onClick = { onPokemonClick(pokemon) }
                     )
                 }
             }
