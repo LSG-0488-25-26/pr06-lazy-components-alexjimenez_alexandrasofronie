@@ -32,7 +32,7 @@ fun PokemonItem(
         modifier = Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick),
-        border = BorderStroke(3.dp, getTypeColor(pokemon.type))
+        border = BorderStroke(4.dp, getTypeColor(pokemon.type))
 
     ) {
         Row(
