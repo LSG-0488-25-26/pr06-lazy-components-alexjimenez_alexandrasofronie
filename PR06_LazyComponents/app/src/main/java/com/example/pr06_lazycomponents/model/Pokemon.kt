@@ -2,6 +2,7 @@ package com.example.pr06_lazycomponents.model
 
 import androidx.annotation.DrawableRes
 
+//Data class de cada Pokemon
 data class Pokemon(
     var name: String,
     var type: String,
@@ -11,6 +12,7 @@ data class Pokemon(
     val weaknesses: List<String>
 )
 
+//Estadisticas de cada Pokemon
 data class PokemonStats(
     val hp: Int,
     val attack: Int,
