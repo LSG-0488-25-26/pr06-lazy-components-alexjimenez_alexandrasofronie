@@ -150,16 +150,6 @@ La aplicación incluye **14 Pokémon** con datos completos:
 - ✅ Componentes reutilizables
 - ✅ Sistema de colores centralizado
 
-## 🎯 Requisitos de la Práctica Cumplidos
-
-- ✅ Arquitectura MVVM con LiveData
-- ✅ Data classes para representar elementos (Pokemon, PokemonStats)
-- ✅ Mínimo 8 elementos instanciados (14 Pokémon creados)
-- ✅ Uso de Lazy Components (LazyColumn)
-- ✅ Vista de lista y vista de detalle implementadas
-- ✅ Navegación entre pantallas
-- ✅ Datos inicializados manualmente con imágenes locales
-
 ## 👨‍💻 Autores
 
 **Alex Jiménez**  
