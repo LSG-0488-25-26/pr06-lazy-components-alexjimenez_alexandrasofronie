@@ -7,9 +7,7 @@ data class Pokemon(
     var name: String,
     var type: String,
     @DrawableRes var image: Int,
-    val stats: PokemonStats,
-    val moves: List<String>,
-    val weaknesses: List<String>
+    val stats: PokemonStats
 )
 
 //Estadisticas de cada Pokemon
