@@ -2,13 +2,17 @@ package com.example.pr06_lazycomponents.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,18 +29,28 @@ fun PokemonDetailScreen(
     pokemon: Pokemon,
     onBackClick: () -> Unit
 ) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+    LazyColumn(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(
-            painter = painterResource(id = pokemon.image),
-            contentDescription = "Imagen de ${pokemon.name}",
-            modifier = Modifier.size(200.dp)
-        )
+        item{
+            Spacer(modifier = Modifier.height(24.dp))
+            Card(
+                modifier = Modifier.size(250.dp),
+                shape = CircleShape
+            ) {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ){
+                    Image(
+                        painter = painterResource(id = pokemon.image),
+                        contentDescription = "Imagen de ${pokemon.name}",
+                        modifier = Modifier.size(200.dp)
+                    )
+                }
+            }
+
 
         Spacer(modifier = Modifier.height(24.dp))
 
