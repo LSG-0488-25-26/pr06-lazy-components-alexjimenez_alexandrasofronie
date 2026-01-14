@@ -1,6 +1,5 @@
 package com.example.pr06_lazycomponents.view
 
-import androidx.benchmark.traceprocessor.Row
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
