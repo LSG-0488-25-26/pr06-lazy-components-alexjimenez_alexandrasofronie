@@ -49,7 +49,8 @@ fun PokemonListScreen(
         } else {
             LazyColumn(
                 modifier = Modifier.padding(horizontal = 8.dp),
-                verticalArrangement = Arrangement.spacedBy(11.dp)
+                verticalArrangement = Arrangement.spacedBy(11.dp),
+                contentPadding = PaddingValues(bottom = 23.dp)
 
             ) {
                 items(pokemonList) { pokemon ->
