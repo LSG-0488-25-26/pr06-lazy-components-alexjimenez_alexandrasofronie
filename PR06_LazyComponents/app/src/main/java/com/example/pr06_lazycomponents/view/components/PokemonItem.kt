@@ -1,4 +1,4 @@
-package com.example.pr06_lazycomponents.view
+package com.example.pr06_lazycomponents.view.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable

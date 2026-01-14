@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Alignment
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.pr06_lazycomponents.view.components.PokemonItem
 import com.example.pr06_lazycomponents.viewmodel.PokemonViewModel
 
 @Composable

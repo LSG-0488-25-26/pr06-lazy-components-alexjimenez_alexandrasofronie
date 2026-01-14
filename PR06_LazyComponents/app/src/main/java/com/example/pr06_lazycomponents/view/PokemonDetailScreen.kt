@@ -33,7 +33,7 @@ fun PokemonDetailScreen(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        item{
+        item {
             Spacer(modifier = Modifier.height(24.dp))
             Card(
                 modifier = Modifier.size(250.dp),
@@ -42,39 +42,38 @@ fun PokemonDetailScreen(
                 Box(
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
-                ){
+                ) {
                     Image(
                         painter = painterResource(id = pokemon.image),
                         contentDescription = "Imagen de ${pokemon.name}",
                         modifier = Modifier.size(200.dp)
                     )
                 }
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                Text(
+                    text = pokemon.name,
+                    fontSize = 32.sp,
+                    fontWeight = FontWeight.Bold
+                )
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                Text(
+                    text = "Tipo: ${pokemon.type}",
+                    fontSize = 20.sp
+                )
+
+                Spacer(modifier = Modifier.height(32.dp))
             }
 
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        Text(
-            text = pokemon.name,
-            fontSize = 32.sp,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.primary
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Text(
-            text = "Tipo: ${pokemon.type}",
-            fontSize = 20.sp,
-            color = MaterialTheme.colorScheme.secondary
-        )
-
-        Spacer(modifier = Modifier.height(32.dp))
-
-        Button(
-            onClick = onBackClick
-        ) {
-            Text("Volver a la lista")
+            Button(
+                onClick = onBackClick
+            ) {
+                Text("Volver a la lista")
+            }
         }
+
     }
 }
