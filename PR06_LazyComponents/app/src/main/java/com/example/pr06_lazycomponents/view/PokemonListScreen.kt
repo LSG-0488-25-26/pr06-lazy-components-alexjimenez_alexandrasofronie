@@ -53,7 +53,7 @@ fun PokemonListScreen(
 
             ) {
                 items(pokemonList) { pokemon ->
-                    PokemonItem(
+                    PokemonItem(    //aqui llamamos al card de pokemon en PokemonItem
                         pokemon = pokemon,
                         onClick = { onPokemonClick(pokemon) }
                     )
